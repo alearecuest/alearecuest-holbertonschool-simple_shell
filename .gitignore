@@ -9,6 +9,7 @@ size64
 core.*
 *main.c
 hsh
+make.c
 
 # Object files
 *.o
