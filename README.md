@@ -1,1 +1,2 @@
-# alearecuest-holbertonschool-simple_shell
+Proyecto Final 
+holbertonschool-simple_shell
