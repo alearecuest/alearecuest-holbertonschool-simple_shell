@@ -8,6 +8,7 @@ size64
 *. 
 core.*
 *main.c
+hsh
 
 # Object files
 *.o
