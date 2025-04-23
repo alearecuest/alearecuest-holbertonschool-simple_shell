@@ -1,22 +1,11 @@
 # Prerequisites
 *.d
-*.swp
-*.swo
-*.swn
-size32
-size64
-*. 
-core.*
-*main.c
 hsh
-make.c
-
 # Object files
 *.o
 *.ko
 *.obj
 *.elf
-hsh
 
 # Linker output
 *.ilk
