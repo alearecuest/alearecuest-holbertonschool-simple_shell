@@ -35,16 +35,10 @@ void run_shell_loop(void)
 			continue;
 		}
 
-		if (strcmp(args[0], "exit") == 0)
-		{
-			free(args);
-			free(input);
-			exit(0);
-		}
 
 		execute_command(args);
 		free(args);
 	}
 
-	/*free(input);*/
+	free(input);
 }
