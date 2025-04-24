@@ -71,7 +71,7 @@ int execute_external_command(char **args)
 
 		if (WIFEXITED(status))
 			return(WIFEXITED(status));
-		return(1);
+		return(2);
 	}
 	else
 	{
