@@ -2,7 +2,7 @@
 
 
 ### NAME
-**$eloco$h** - A simple shell written in C
+**$heloco$h** - A simple shell written in C
 
 
 ### SYNOPSIS
@@ -17,7 +17,7 @@ int main(void);
 
 ### DESCRIPTION
 
-The **_`$elocosh`_** shell is a command interpreter that allows the execution of internal and external commands. It provides basic functionalities such as command execution, environment variable handling, and shell exit.
+The **_`$helocosh`_** shell is a command interpreter that allows the execution of internal and external commands. It provides basic functionalities such as command execution, environment variable handling, and shell exit.
 
 #### Internal commands
 
@@ -127,7 +127,7 @@ int main(void)
 
 ### RETURN VALUE
 
-The **_`$eloco$h_** shell returns the number of characters printed (excluding the NULL byte used to end output to strings). If the format argument is NULL or if an invalid specifier is provided, the function returns -1.
+The **_`$heloco$h_** shell returns the number of characters printed (excluding the NULL byte used to end output to strings). If the format argument is NULL or if an invalid specifier is provided, the function returns -1.
 
 ### EXAMPLE
 
@@ -157,26 +157,26 @@ $hsh: exit
 
 | **_CASE_** | **_OUTPUT_** |
 | ------------- |:-------------:|
-| `$eloco$h: env` | **PATH=/usr/local/bin:/usr/bin:/bin** |
+| `$heloco$h: env` | **PATH=/usr/local/bin:/usr/bin:/bin** |
 | | **HOME=/home/user** |
 | |**SHELL=/bin/bash** |
-| `$hsh: exit` | **finish th execution** |
-| `$hsh: ls` | **README.md  buitlins.c  errors.c  execute.c  hsh  input.c  path.c  prompt.c  shell.c  shell.h  shell_loop.c** |
-| `$hsh: pwd` | **/root/holbertonschool-simple_shell** |
-| `$hsh: echo Hello, World!` | **Hello, World!** |
-| `$hsh: unknown_command` | **./hsh: 1: unknown_command: not found** |
-| `$hsh: mkdir prueba` | **Create file prueba** |
-| `$hsh: rmdir prueba` | **Remove file prueba** |
+| `$heloco$h: exit` | **finish th execution** |
+| `$heloco$h: ls` | **README.md  buitlins.c  errors.c  execute.c  hsh  input.c  path.c  prompt.c  shell.c  shell.h  shell_loop.c** |
+| `$heloco$h: pwd` | **/root/holbertonschool-simple_shell** |
+| `$heloco$h: echo Hello, World!` | **Hello, World!** |
+| `$heloco$h: unknown_command` | **./hsh: 1: unknown_command: not found** |
+| `$heloco$h: mkdir prueba` | **Create file prueba** |
+| `$heloco$h: rmdir prueba` | **Remove file prueba** |
 
 
 
 ### ERROR HANDLING
 
-The **_`$eloco$h`_** The hsh shell handles errors gracefully. If an invalid format specifier is encountered, the function will return -1 and print an error message to stderr.
+The **_`$heloco$h`_** The hsh shell handles errors gracefully. If an invalid format specifier is encountered, the function will return -1 and print an error message to stderr.
 
 
 ### LIMITATIONS
-The current implementation of the **_`$eloco$h`_** shell does not support the following:
+The current implementation of the **_`$heloco$h`_** shell does not support the following:
 
 - Flag characters
 - Field width
@@ -185,7 +185,7 @@ The current implementation of the **_`$eloco$h`_** shell does not support the fo
 
 
 ### TESTING
-To test the **_`$eloco$h`_** shell, compile your code using the following command:
+To test the **_`$heloco$h`_** shell, compile your code using the following command:
 
 ```text
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
