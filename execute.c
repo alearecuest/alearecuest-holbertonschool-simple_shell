@@ -71,5 +71,6 @@ int execute_external_command(char **args)
 	if (command_path != args[0])
 		free(command_path);
 
+	wait(&status);
 	return WEXITSTATUS(status);
 }
