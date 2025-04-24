@@ -11,11 +11,7 @@
  */
 void execute_command(char **args)
 {
-	if (strcmp(args[0], "exit") == 0)
-	{
-		handle_exit();
-	}
-	else if (strcmp(args[0], "env") == 0)
+	if (strcmp(args[0], "env") == 0)
 	{
 		handle_env();
 	}
