@@ -14,13 +14,17 @@ int execute_command(char **args)
 	if (strcmp(args[0], "exit") == 0)
 	{
 		handle_exit();
+		return (0);
+	}
+	else if (strcmp(args[0], "env") == 0)
+	{
+		handle_env();
+		return(0);		
 	}
 	else
 	{
-		execute_external_command(args);
+		return(execute_external_command(args));
 	}
-
-	return (0);
 }
 
 /**
@@ -60,17 +64,19 @@ int execute_external_command(char **args)
 	}
 	else if (pid > 0)
 	{
-		wait(&status);
+		waitpid(pid, &status, 0);
+
+		if (command_path != args [0])
+			free(command_path);
+
+		if (WIFEXITED(status))
+			return(WIFEXITED(status));
+		return(1);
 	}
 	else
 	{
 		perror("Fork error");
 		return (1);
 	}
-
-	if (command_path != args[0])
-		free(command_path);
-
-	wait(&status);
-	return WEXITSTATUS(status);
+	return(0);
 }
