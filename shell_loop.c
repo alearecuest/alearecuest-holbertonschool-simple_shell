@@ -14,6 +14,7 @@ void run_shell_loop(void)
 	ssize_t read;
 	char **args;
 	int is_interactive = isatty(STDIN_FILENO);
+	int last_status = 0;
 
 	while (1)
 	{
@@ -39,11 +40,10 @@ void run_shell_loop(void)
 		{
 			free(args);
 			free(input);
-			exit(EXIT_SUCCESS);
+			exit(last_status);
 		}
 
-
-		execute_command(args);
+		last_status = execute_command(args);
 		free(args);
 	}
 

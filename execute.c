@@ -9,16 +9,18 @@
  * accordingly, or passes it to external command handler
  * Return: None
  */
-void execute_command(char **args)
+int execute_command(char **args)
 {
 	if (strcmp(args[0], "exit") == 0)
 	{
-		handle_env();
+		handle_exit();
 	}
 	else
 	{
 		execute_external_command(args);
 	}
+
+	return (0);
 }
 
 /**
@@ -29,9 +31,10 @@ void execute_command(char **args)
  * either using the direct path or searching in PATH
  * Return: None
  */
-void execute_external_command(char **args)
+int execute_external_command(char **args)
 {
 	pid_t pid;
+	int status;
 	char *command_path = args[0];
 
 	if (access(command_path, X_OK) != 0)
@@ -57,13 +60,16 @@ void execute_external_command(char **args)
 	}
 	else if (pid > 0)
 	{
-		wait(NULL);
+		wait(&status);
 	}
 	else
 	{
 		perror("Fork error");
+		return (1);
 	}
 
 	if (command_path != args[0])
 		free(command_path);
+
+	return WEXITSTATUS(status);
 }

@@ -11,8 +11,8 @@
 
 void handle_env(void);
 void print_command_error(const char *cmd);
-void execute_command(char **args);
-void execute_external_command(char **args);
+int execute_command(char **args);
+int execute_external_command(char **args);
 char **tokenize_input(char *input);
 char *get_env_variable(const char *name);
 char *find_command_in_path(char *command);
