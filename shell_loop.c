@@ -39,12 +39,12 @@ void run_shell_loop(void)
 		{
 			free(args);
 			free(input);
-			handle_exit();
+			exit(0);
 		}
 
 		execute_command(args);
 		free(args);
 	}
 
-	free(input);
+	/*free(input);*/
 }
