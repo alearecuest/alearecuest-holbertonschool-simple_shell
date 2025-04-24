@@ -23,7 +23,7 @@ void run_shell_loop(void)
 		read = getline(&input, &len, stdin);
 		if (read == -1)
 		{
-			if (is_interactive)
+			if (is_interactive) 
 				printf("\n");
 			break;
 		}
@@ -33,6 +33,13 @@ void run_shell_loop(void)
 		{
 			free(args);
 			continue;
+		}
+
+		if (strcmp(args[0], "exit") == 0)
+		{
+			free(args);
+			free(input);
+			exit(EXIT_SUCCESS);
 		}
 
 

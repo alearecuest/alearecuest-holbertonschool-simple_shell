@@ -13,11 +13,6 @@ void execute_command(char **args)
 {
 	if (strcmp(args[0], "exit") == 0)
 	{
-		free(args);
-		handle_exit();
-	}
-	else if (strcmp(args[0], "env") == 0)
-	{
 		handle_env();
 	}
 	else
