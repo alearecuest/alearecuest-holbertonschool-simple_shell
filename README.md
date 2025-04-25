@@ -50,6 +50,7 @@ void handle_env(void)
 
 #### _errors.c_
 
+```text
 void print_command_error(const char *cmd)
 
 - **_Description_**: Prints an error message for the command not found.
@@ -62,7 +63,7 @@ void print_command_error(const char *cmd)
 ```text
 void execute_command(char **args, char *input)
 ```
-
+```text
 - **_Description_**: Executes a command based on input arguments.
 - **_Parameters_**: args -> Array of command arguments, input -> Input string (for freeing in exit command).
 - **_Return Value_**: None.
