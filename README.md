@@ -1,5 +1,3 @@
-aaaa
-
 # Proyect *SHELL*
 
 
