@@ -44,18 +44,17 @@ int execute_external_command(char **args)
 	if (access(command_path, X_OK) != 0)
 	{
 		command_path = find_command_in_path(args[0]);
-	}
-
-
-	pid = fork();
-	if (pid == 0)
-	{
+		
 		if (!command_path || access(command_path, X_OK) != 0)
 		{
 			print_command_error(args[0]);
-			exit(127);
+			return (127);
 		}
-
+	}
+	
+	pid = fork();
+	if (pid == 0)
+	{
 		if (execve(command_path, args, environ) == -1)
 		{
 			perror(command_path);
@@ -70,7 +69,7 @@ int execute_external_command(char **args)
 			free(command_path);
 
 		if (WIFEXITED(status))
-			return(WIFEXITED(status));
+			return(WEXITSTATUS(status));
 		return(2);
 	}
 	else
