@@ -35,15 +35,15 @@ The shell can execute both internal and external commands. If the command is not
 ```text
 void handle_exit(char **args, char *input)
 
-- **_Description_**: Handles the exit command for the shell.
-- **_Parameters_**: args -> Array of command arguments, input -> Input string to be freed.
-- **_Return Value_**: None (terminates the process).
+- **_`Description`_**: Handles the exit command for the shell.
+- **_`Parameters`_**: args -> Array of command arguments, input -> Input string to be freed.
+- **_`Return Value`_**: None (terminates the process).
 
 void handle_env(void)
 
-- **_Description_**: Prints all environment variables.
-- **_Parameters_**: None.
-- **_Return Value_**: None.
+- **_`Description`_**: Prints all environment variables.
+- **_`Parameters`_**: None.
+- **_`Return Value`_**: None.
 ```
 
 #### _errors.c_
