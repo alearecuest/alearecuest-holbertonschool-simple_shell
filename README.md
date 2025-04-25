@@ -38,13 +38,15 @@ void handle_exit(char **args, char *input)
 - **_Description_**: Handles the exit command for the shell.
 - **_Parameters_**: args -> Array of command arguments, input -> Input string to be freed.
 - **_Return Value_**: None (terminates the process).
+```
 
+```text
 void handle_env(void)
 
 - **_Description_**: Prints all environment variables.
 - **_Parameters_**: None.
 - **_Return Value_**: None.
-
+```
 
 #### _errors.c_
 
@@ -53,7 +55,7 @@ void print_command_error(const char *cmd)
 - **_Description_**: Prints an error message for the command not found.
 - **_Parameters_**: cmd -> The command that was not found.
 - **_Return Value_**: None.
-
+```
 
 #### _execute.c_
 
@@ -64,6 +66,7 @@ void execute_command(char **args, char *input)
 - **_Description_**: Executes a command based on input arguments.
 - **_Parameters_**: args -> Array of command arguments, input -> Input string (for freeing in exit command).
 - **_Return Value_**: None.
+```
 
 ```text
 void execute_external_command(char **args)
@@ -72,6 +75,8 @@ void execute_external_command(char **args)
 - **_Description_**: Executes an external command.
 - **_Parameters_**: args -> Array of command arguments.
 - **_Return Value_**: None.
+
+```
 
 #### _input.c_
 
@@ -83,6 +88,8 @@ char **tokenize_input(char *input)
 - **_Parameters_**: input -> The input string to tokenize.
 - **_Return Value_**: Array of string tokens, or NULL on failure.
 
+```
+
 #### _path.c_
 
 ```text
@@ -93,6 +100,8 @@ char *get_env_variable(const char *name)
 - **_Parameters_**: name -> Name of the environment variable to retrieve.
 - **_Return Value_**: Pointer to the value string, or NULL if not found.
 
+```
+
 ```text
 char *find_command_in_path(char *command)
 ```
@@ -100,6 +109,8 @@ char *find_command_in_path(char *command)
 - **_Description_**: Locates a command in the PATH environment variable.
 - **_Parameters_**: command -> Command name to search for.
 - **_Return Value_**: Full path to the command if found, NULL otherwise.
+
+```
 
 #### _promt.c_
 
@@ -110,6 +121,7 @@ void print_prompt(void)
 - **_Description_**: Displays the shell prompt.
 - **_Parameters_**: None.
 - **_Return Value_**: None.
+```
 
 #### _shell.c_
 
@@ -120,7 +132,7 @@ int main(void)
 - **_Description_**: Entry point for the shell program.
 - **_Parameters_**: None.
 - **_Return Value_**: 0 on success.
-
+```
 
 ### RETURN VALUE
 
