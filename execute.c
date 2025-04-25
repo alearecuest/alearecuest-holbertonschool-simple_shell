@@ -19,7 +19,7 @@ int execute_command(char **args)
 	else if (strcmp(args[0], "env") == 0)
 	{
 		handle_env();
-		return(0);		
+		return(0);
 	}
 	else
 	{
@@ -68,7 +68,7 @@ int execute_external_command(char **args)
 		if (command_path != args [0])
 			free(command_path);
 
-		if (WIFEXITED(status))
+		if (WEXITSTATUS(status))
 			return(WEXITSTATUS(status));
 		return(2);
 	}
