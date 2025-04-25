@@ -19,11 +19,11 @@ int execute_command(char **args)
 	else if (strcmp(args[0], "env") == 0)
 	{
 		handle_env();
-		return(0);
+		return (0);
 	}
 	else
 	{
-		return(execute_external_command(args));
+		return (execute_external_command(args));
 	}
 }
 
@@ -44,14 +44,14 @@ int execute_external_command(char **args)
 	if (access(command_path, X_OK) != 0)
 	{
 		command_path = find_command_in_path(args[0]);
-		
+
 		if (!command_path || access(command_path, X_OK) != 0)
 		{
 			print_command_error(args[0]);
 			return (127);
 		}
 	}
-	
+
 	pid = fork();
 	if (pid == 0)
 	{
