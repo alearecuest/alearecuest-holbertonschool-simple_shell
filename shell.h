@@ -9,16 +9,16 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-void handle_env(void);
-void print_command_error(const char *cmd);
+void print_prompt(void);
+char **tokenize_input(char *input);
 int execute_command(char **args);
 int execute_external_command(char **args);
-char **tokenize_input(char *input);
+void handle_exit(void);
+void handle_env(void);
+void print_command_error(const char *cmd);
 char *get_env_variable(const char *name);
 char *find_command_in_path(char *command);
-void print_prompt(void);
-void run_shell_loop(void);
-void handle_exit(void);
+int run_shell_loop(void);
 
 extern char **environ;
 

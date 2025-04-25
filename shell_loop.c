@@ -1,51 +1,45 @@
 #include "shell.h"
 
 /**
- * run_shell_loop - Main loop for the shell program
+ * run_shell_loop - Main shell loop
  *
- * Description: Continuously reads input from the user, processes it,
- * and executes the appropriate commands until exit
- * Return: None
+ * Description: Reads input, parses it into commands and executes them
+ * Return: Status code of the last command executed
  */
-void run_shell_loop(void)
+int run_shell_loop(void)
 {
 	char *input = NULL;
-	size_t len = 0;
-	ssize_t read;
 	char **args;
-	int is_interactive = isatty(STDIN_FILENO);
-	int last_status = 0;
+	size_t bufsize = 0;
+	ssize_t chars_read;
+	int status = 0;
 
 	while (1)
 	{
-		if (is_interactive)
-			print_prompt();
+		if (isatty(STDIN_FILENO))
+			printf("$ ");
 
-		read = getline(&input, &len, stdin);
-		if (read == -1)
+		chars_read = getline(&input, &bufsize, stdin);
+
+		if (chars_read == -1)
 		{
-			if (is_interactive) 
+			if (isatty(STDIN_FILENO))
 				printf("\n");
-			break;
+
+			free(input);
+			return (status);
 		}
 
 		args = tokenize_input(input);
-		if (!args || !args[0])
+
+		if (args && args[0])
 		{
-			free(args);
-			continue;
+			status = execute_command(args);
 		}
 
-		if (strcmp(args[0], "exit") == 0)
-		{
-			free(args);
-			free(input);
-			exit(last_status);
-		}
-
-		last_status = execute_command(args);
 		free(args);
 	}
 
 	free(input);
+	return (status);
 }
