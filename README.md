@@ -14,7 +14,6 @@
 int main(void);
 ```
 
-
 ### DESCRIPTION
 
 The **_`$helocosh`_** shell is a command interpreter that allows the execution of internal and external commands. It provides basic functionalities such as command execution, environment variable handling, and shell exit.
@@ -35,15 +34,15 @@ The shell can execute both internal and external commands. If the command is not
 ```text
 void handle_exit(char **args, char *input)
 
-- **_`Description`_**: Handles the exit command for the shell.
-- **_`Parameters`_**: args -> Array of command arguments, input -> Input string to be freed.
-- **_`Return Value`_**: None (terminates the process).
+- Description: Handles the exit command for the shell.
+- Parameters: args -> Array of command arguments, input -> Input string to be freed.
+- Return Value: None (terminates the process).
 
 void handle_env(void)
 
-- **_`Description`_**: Prints all environment variables.
-- **_`Parameters`_**: None.
-- **_`Return Value`_**: None.
+- Description: Prints all environment variables.
+- Parameters: None.
+- Return Value: None.
 ```
 
 #### _errors.c_
@@ -51,9 +50,9 @@ void handle_env(void)
 ```text
 void print_command_error(const char *cmd)
 
-- **_Description_**: Prints an error message for the command not found.
-- **_Parameters_**: cmd -> The command that was not found.
-- **_Return Value_**: None.
+- Description: Prints an error message for the command not found.
+- Parameters: cmd -> The command that was not found.
+- Return Value: None.
 ```
 
 #### _execute.c_
@@ -61,15 +60,15 @@ void print_command_error(const char *cmd)
 ```text
 void execute_command(char **args, char *input)
 
-- **_Description_**: Executes a command based on input arguments.
-- **_Parameters_**: args -> Array of command arguments, input -> Input string (for freeing in exit command).
-- **_Return Value_**: None.
+- Description: Executes a command based on input arguments.
+- Parameters: args -> Array of command arguments, input -> Input string (for freeing in exit command).
+- Return Value: None.
 
 void execute_external_command(char **args)
 
-- **_Description_**: Executes an external command.
-- **_Parameters_**: args -> Array of command arguments.
-- **_Return Value_**: None.
+- Description: Executes an external command.
+- Parameters: args -> Array of command arguments.
+- Return Value: None.
 ```
 
 #### _input.c_
@@ -77,9 +76,9 @@ void execute_external_command(char **args)
 ```text
 char **tokenize_input(char *input)
 
-- **_Description_**: Splits the input string into tokens.
-- **_Parameters_**: input -> The input string to tokenize.
-- **_Return Value_**: Array of string tokens, or NULL on failure.
+- Description: Splits the input string into tokens.
+- Parameters: input -> The input string to tokenize.
+- Return Value: Array of string tokens, or NULL on failure.
 
 ```
 
@@ -88,17 +87,17 @@ char **tokenize_input(char *input)
 ```text
 char *get_env_variable(const char *name)
 
-- **_Description_**: Gets the value of an environment variable.
-- **_Parameters_**: name -> Name of the environment variable to retrieve.
-- **_Return Value_**: Pointer to the value string, or NULL if not found.
+- Description: Gets the value of an environment variable.
+- Parameters: name -> Name of the environment variable to retrieve.
+- Return Value: Pointer to the value string, or NULL if not found.
 ```
 
 ```text
 char *find_command_in_path(char *command)
 
-- **_Description_**: Locates a command in the PATH environment variable.
-- **_Parameters_**: command -> Command name to search for.
-- **_Return Value_**: Full path to the command if found, NULL otherwise.
+- Description: Locates a command in the PATH environment variable.
+- Parameters: command -> Command name to search for.
+- Return Value: Full path to the command if found, NULL otherwise.
 ```
 
 #### _promt.c_
@@ -106,9 +105,9 @@ char *find_command_in_path(char *command)
 ```text
 void print_prompt(void)
 
-- **_Description_**: Displays the shell prompt.
-- **_Parameters_**: None.
-- **_Return Value_**: None.
+- Description: Displays the shell prompt.
+- Parameters: None.
+- Return Value: None.
 ```
 
 #### _shell.c_
@@ -116,9 +115,9 @@ void print_prompt(void)
 ```text
 int main(void)
 
-- **_Description_**: Entry point for the shell program.
-- **_Parameters_**: None.
-- **_Return Value_**: 0 on success.
+- Description: Entry point for the shell program.
+- Parameters: None.
+- Return Value: 0 on success.
 ```
 
 ### RETURN VALUE
