@@ -48,9 +48,7 @@ void handle_env(void)
 
 #### _errors.c_
 
-
 void print_command_error(const char *cmd)
-```
 
 - **_Description_**: Prints an error message for the command not found.
 - **_Parameters_**: cmd -> The command that was not found.
