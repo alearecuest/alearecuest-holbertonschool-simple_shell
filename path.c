@@ -10,6 +10,7 @@ char *get_env_variable(const char *name)
 {
 	char **env;
 	size_t name_len;
+
 	if (!name)
 		return (NULL);
 	name_len = strlen(name);
@@ -33,6 +34,7 @@ char *find_command_in_path(char *command)
 	char *path = get_env_variable("PATH");
 	char *path_copy, *token, *full_path;
 	size_t command_len, dir_len;
+
 	if (!path || !command)
 		return (NULL);
 	path_copy = strdup(path);

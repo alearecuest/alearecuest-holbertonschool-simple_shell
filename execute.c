@@ -33,6 +33,7 @@ int execute_external_command(char **args)
 	pid_t pid;
 	int status;
 	char *command_path = args[0];
+
 	if (access(command_path, X_OK) != 0)
 	{
 		command_path = find_command_in_path(args[0]);
