@@ -19,6 +19,7 @@ void print_command_error(const char *cmd);
 char *get_env_variable(const char *name);
 char *find_command_in_path(char *command);
 int run_shell_loop(void);
+char *get_env_variable(const char *name);
 
 extern char **environ;
 
