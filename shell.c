@@ -2,12 +2,18 @@
 
 /**
  * main - Entry point for the shell program
+ * @argc: Argument count
+ * @argv: Argument vector
  *
- * Description: Initializes and runs the shell loop
- * Return: 0 on success
+ * Return: Exit status of shell
  */
-int main(void)
+int main(int argc, char **argv)
 {
-	run_shell_loop();
-	return (0);
+	int status;
+	
+	(void)argc;
+	(void)argv;
+	
+	status = run_shell_loop();
+	return (status);
 }
